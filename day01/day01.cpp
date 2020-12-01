@@ -44,6 +44,6 @@ int main() {
           }
       }
   }
-  std::cout << part1 << "\n" << part2;
+  std::cout << part1 << "\n" << part2 << std::endl;
   return 0;
 }
