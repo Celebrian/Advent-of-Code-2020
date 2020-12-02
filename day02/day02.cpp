@@ -6,6 +6,7 @@ int main() {
   const int MAXLINELENGTH = 30;
   //Number of valid passwords
   int valid_passwords = 0;
+  int acctually_valid_passwords = 0;
   //Each line in the input as string
   std::string line;
   while (std::getline(std::cin, line))
@@ -32,7 +33,13 @@ int main() {
     {
       valid_passwords += 1;
     }
+
+    //Part 2
+    if ((password[lower_limit - 1] == letter && password[upper_limit - 1] != letter) || (password[lower_limit - 1] != letter && password[upper_limit - 1] == letter))
+    {
+      acctually_valid_passwords++;
+    }
   }
-  std::cout << valid_passwords << "\n";
+  std::cout << valid_passwords << "\n" << acctually_valid_passwords << std::endl;
   return 0;
 }
